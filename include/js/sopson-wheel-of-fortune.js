@@ -1,29 +1,3 @@
-var theWheel = new Winwheel({
-    'numSegments' : 8,
-    'segments'    :
-    [
-        {'fillStyle' : '#eae56f', 'text' : 'Shovel'},
-        {'fillStyle' : '#89f26e', 'text' : 'Dirt'},
-        {'fillStyle' : '#7de6ef', 'text' : 'Cobbelstone'},
-        {'fillStyle' : '#e7706f', 'text' : 'Sword 2', 'size' : 4},
-        
-        {'fillStyle' : '#ea356f', 'text' : 'Shovel', 'size' : 20},
-        {'fillStyle' : '#82f26e', 'text' : 'Dirt'},
-        {'fillStyle' : '#7dc6ef', 'text' : 'Cobbelstone'},
-        {'fillStyle' : '#e7703f', 'text' : 'Sword', 'size' : 4},
-    ],							
-    'animation' :                   
-    {
-        'type'     : 'spinToStop',  
-        'duration' : 5,
-        'spins'    : 8,
-        'callbackFinished' : 'alertPrize()',
-        'callbackAfter' : 'drawTriangle()'
-    },   
-    'pointerAngle'   : 90,  
-});
-
-console.log(theWheel);
 
 drawTriangle();
 
@@ -41,9 +15,37 @@ function alertPrize()
 
     drawTriangle();
         
-	var winningSegment = theWheel.getIndicatedSegment();
-	
-	alert("You have won " + winningSegment.text + "!");
+	var name = jQuery('.spin-info-container h5').text();
+    var winningSegment = theWheel.getIndicatedSegment();
+    
+	jQuery.ajax({
+		type: 'POST',
+		url: sopson_ajax_url,
+		//data: 'action=update_last_spin&item_name='+winningSegment.text+'&player_name='+name,
+		data: {
+    		action: 'update_last_spin',
+            item_name: winningSegment.text,
+            player_name: name,
+            item_index: winningSegmentNumber
+        },
+		success: function(data, status, xhr) 
+		{	
+			console.log(data);
+			console.log(status);
+			console.log(xhr);
+            document.getElementById("wof-result").innerHTML = winningSegment.text;
+			var inst = jQuery('[data-remodal-id=modal]').remodal();
+			inst.open();
+		},
+		error: function(data, status, xhr)
+		{
+			console.log(data);
+			console.log(status);
+			console.log(xhr);
+			document.getElementById("wof-result").innerHTML = data;
+			document.getElementById("wof-result").style.background = "rgba(255, 0, 0, .6)";
+		}
+	});
 }
 
 function drawTriangle()

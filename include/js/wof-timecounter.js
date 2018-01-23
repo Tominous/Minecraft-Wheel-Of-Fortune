@@ -20,6 +20,6 @@ var x = setInterval(function()
 	if (distance < 0) 
 	{
 		clearInterval(x);
-		document.getElementById("demo").innerHTML = "Odśwież strone :)";
+		document.getElementById("wof-timecounter").innerHTML = "Odśwież strone :)";
 	}
 }, 1000);

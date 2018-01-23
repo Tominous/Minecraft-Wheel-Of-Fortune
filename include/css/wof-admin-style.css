@@ -1,0 +1,25 @@
+
+#form-base-fields {
+    display: block;
+}
+    
+#form-items {
+    display: block;
+    width: 95% !important;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px grey solid;
+}
+
+#form-items .form-row .base-fields {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px grey solid;
+}
+
+
+
+
+#toplevel_page_wof-managment-page img {
+    filter: invert() !important;
+}
