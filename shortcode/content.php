@@ -5,7 +5,6 @@
 <canvas id='canvas' width='880' height='600'>Canvas nie jest wspierane, użyj innej przeglądarki.</canvas>
 <div class="spin-info-container">
 	<h4>Witaj!</h4>
-<!--	<h5><?php echo $this->MCuser->realname; ?></h5>-->
 	<h5><?php echo $this->MCuser['realname']; ?></h5>
 	<button id="spin-button" onClick="theWheel.startAnimation(); this.disabled = true; this.style.display='none';">Zakręć</button>
 </div>
@@ -69,7 +68,6 @@ var theWheel = new Winwheel({
 	elseif($show == "spinned"):
 ?>
 <div id="wof-spinned">
-<!--	<h3>Można zakręcić kołem tylko raz dziennie. <?php echo $this->MCuser->realname; ?> poczekaj do jutra :)</h3> -->
 	<h3>Można zakręcić kołem tylko raz dziennie. <?php echo $this->MCuser['realname']; ?> poczekaj do jutra :)</h3>
 	<h4>Zostało tylko</h4>
 	<div id="wof-timecounter"></div>

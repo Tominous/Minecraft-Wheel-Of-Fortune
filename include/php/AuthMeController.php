@@ -8,6 +8,7 @@
  *                                                                           *
  * Source: https://github.com/AuthMe/AuthMeReloaded/                         *
  *****************************************************************************/
+
 abstract class AuthMeController {
     const AUTHME_TABLE = 'authme';
     /**

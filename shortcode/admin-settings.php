@@ -17,12 +17,12 @@
                         </div>
                         <div class="col">
                             <input type="text" class="form-control <?php echo $classes['port']; ?>" placeholder="MC server port" name="port" value="<?php echo $this->config['port']; ?>" />
-                            <small class="form-text text-muted">Server port</small>
+                            <small class="form-text text-muted">Server rcon port</small>
                             <div class="invalid-feedback">Field has to be not empty</div>
                         </div>
                         <div class="col">
                             <input type="password" class="form-control <?php echo $classes['password']; ?>" placeholder="MC query password" name="password" value="<?php echo $this->config['password']; ?>" />
-                            <small class="form-text text-muted">MC query password</small>
+                            <small class="form-text text-muted">MC Rcon password</small>
                             <div class="invalid-feedback">Field has to be not empty</div>
                         </div>
                     </div>

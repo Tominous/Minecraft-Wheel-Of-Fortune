@@ -15,42 +15,41 @@ function alertPrize()
 
     drawTriangle();
         
-	var name = jQuery('.spin-info-container h5').text();
+    var name = jQuery('.spin-info-container h5').text();
     var winningSegment = theWheel.getIndicatedSegment();
     
-	jQuery.ajax({
-		type: 'POST',
-		url: sopson_ajax_url,
-		//data: 'action=update_last_spin&item_name='+winningSegment.text+'&player_name='+name,
-		data: {
-    		action: 'update_last_spin',
+    jQuery.ajax({
+        type: 'POST',
+        url: sopson_ajax_url,
+        data: {
+            action: 'update_last_spin',
             item_name: winningSegment.text,
             player_name: name,
             item_index: winningSegmentNumber
         },
-		success: function(data, status, xhr) 
-		{	
-			console.log(data);
-			console.log(status);
-			console.log(xhr);
+        success: function(data, status, xhr) 
+        {   
+            console.log(data);
+            console.log(status);
+            console.log(xhr);
             document.getElementById("wof-result").innerHTML = winningSegment.text;
-			var inst = jQuery('[data-remodal-id=modal]').remodal();
-			inst.open();
-		},
-		error: function(data, status, xhr)
-		{
-			console.log(data);
-			console.log(status);
-			console.log(xhr);
-			document.getElementById("wof-result").innerHTML = data;
-			document.getElementById("wof-result").style.background = "rgba(255, 0, 0, .6)";
-		}
-	});
+            var inst = jQuery('[data-remodal-id=modal]').remodal();
+            inst.open();
+        },
+        error: function(data, status, xhr)
+        {
+            console.log(data);
+            console.log(status);
+            console.log(xhr);
+            document.getElementById("wof-result").innerHTML = data;
+            document.getElementById("wof-result").style.background = "rgba(255, 0, 0, .6)";
+        }
+    });
 }
 
 function drawTriangle()
 {
-	var ctx = theWheel.ctx;
+    var ctx = theWheel.ctx;
  
     ctx.strokeStyle = 'navy';  
     ctx.fillStyle   = 'aqua';  

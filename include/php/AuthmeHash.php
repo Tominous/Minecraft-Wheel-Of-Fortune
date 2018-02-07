@@ -25,6 +25,7 @@ class Sha256 extends AuthMeController {
         $salt = $this->generateSalt();
         return '$SHA$' . $salt . '$' . hash('sha256', hash('sha256', $password) . $salt);
     }
+    
     /**
      * @return string randomly generated salt
      */
