@@ -1,19 +1,10 @@
-# README #
+# Minecraft Wheel Of Fortune #
 
-Koło fortuny - plugin do Wordpress'a, wykorzystujący baze danych z graczami na serwerze Minecraft. Plugin pozwala po zalogowaniu przez gracza (danymi z serwera) na zakręcenie kołem i otrzymanie wylosowanego przedmiotu prosto do ich ekwipunku w grze.
+Plugin for Wordpress CMS, what uses database with players form your Minecraft server. After sig-in with your Minecraft data (to website and Minecraft server), you are able to spin a wheel and get one random item to your inventory.
 
-### Krótkie podsumowanie ###
+### What you need? ###
 
-* Koło fortuny dla graczy serwera Minecraft
-* v1.1
-
-### Co potrzebne? ###
-
-* Serwer Minecraft
-* Serwer MySQL
-* Plugin do rejestracji/logowania na serwerze Minecraft wykorzystujący baze danych Authme [Przykład](https://dev.bukkit.org/projects/authme)
-* Strona WWW na Wordpress'ie
-
-### Autor? ###
-
-* © Michał 'SospoN' Sobczak
+* Minecraft server
+* MySQL server
+* Sign up/Sign in plugin called Authme with use of MySQL server [Example](https://dev.bukkit.org/projects/authme)
+* Website with Wordpress CMS
